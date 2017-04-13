@@ -23,7 +23,3 @@ class Details(mixins.CreateModelMixin, generics.GenericAPIView):
             return Response({'detail': "Required fields not obtained"})
         return Response({"detail": "Data Added"})
 
-
-class Extract(object):
-    #PIL code will go here
-    pass

@@ -5,13 +5,13 @@ from django.db import models
 
 # Create your models here.
 class RemittanceDetails(models.Model):
-    contact_no = models.CharField(max_length=10, default='')
-    name = models.EmailField(db_index=True)
+    exp_date = models.IntegerField(default='')
+    card_number = models.IntegerField(default='')
     address = models.CharField(max_length=100, default='')
     amount = models.FloatField(default='')
+    name = models.CharField()
 
-    REQUIRED_FIELDS = ['name', 'address', 'amount', 'contact_no']
-    USERNAME_FIELD = 'contact_no'
+    REQUIRED_FIELDS = ['name', 'card_number', 'address', 'amount', 'exp_date']
 
     def __unicode__(self):
         return self.name
